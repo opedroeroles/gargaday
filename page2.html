@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O momento móvel 🚗💨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         TÍTULO DA PÁGINA
+    =========================================== -->
+    <h1>O momento móvel 🚗💨</h1>
+
+
+    <!-- ==========================================
+         TEXTO PRINCIPAL
+    =========================================== -->
+    <p>
+        Uma das principais coisas que aprendi com você foi a honrar o sagrado espaço do <br><strong>GARGAMOVEL</strong>.<br><br>
+        Não importa a aula, o tempo, o trânsito: ele estará lá para te socorrer. Além disso, é espaço sagrado para a prosa dos segredos mais íntimos, sede da criação dos boatos mais elaborados, ponto de encontro oficial do <em>vinhombomel</em> (quando a gargaverna não está disponível).
+    </p>
+
+
+    <!-- ==========================================
+         BOTÃO DE NAVEGAÇÃO
+         (O href indica para qual link o botão vai)
+    =========================================== -->
+    <a href="page3.html" class="btn">Próxima página 🏃‍♂️</a>
+
+
+    <!-- ==========================================
+         ÁUDIO (Mude o src="" para o nome do seu arquivo, ex: 1.mp3)
+    =========================================== -->
+    <audio id="audioFundo" src="2.mp3" preload="auto"></audio>
+
+
+    <!-- ==========================================
+         SCRIPT PARA TOCAR O ÁUDIO AUTOMATICAMENTE
+    =========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audioFundo');
+            
+            // Tenta tocar o áudio assim que a página carrega
+            audio.play().catch(error => {
+                console.log("O navegador bloqueou o autoplay. O áudio será iniciado ao primeiro clique.");
+            });
+            
+            // Caso o navegador bloqueie (comum hoje em dia), toca no primeiro clique em qualquer lugar da tela
+            document.body.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                }
+            }, { once: true });
+        });
+    </script>
+
+</body>
+</html>
