@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O momento conjunto 🧠⚡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         TÍTULO DA PÁGINA
+    =========================================== -->
+    <h1>O momento conjunto 🧠⚡</h1>
+
+
+    <!-- ==========================================
+         TEXTO PRINCIPAL
+    =========================================== -->
+    <p>
+        Outra coisa a ser observada nessa amizade é a <strong>SINAPSE</strong> que ocorre de hora em hora, na qual as duas partes (eu e você) fazem gestos similares, reproduzem a mesma fala ou conseguem inferir o pensamento apenas com a observação do olhar.<br><br>
+        Ultimamente, isso ocorre com o áudio da música "A amizade", mas de forma muito especial também com o áudio do <strong>seu armando</strong>, que está sendo reproduzido nesse momento.
+    </p>
+
+
+    <!-- ==========================================
+         BOTÃO DE NAVEGAÇÃO
+         (O href indica para qual link o botão vai)
+    =========================================== -->
+    <a href="page4.html" class="btn">Próxima página 🧠</a>
+
+
+    <!-- ==========================================
+         ÁUDIO (Mude o src="" para o nome do seu arquivo, ex: 1.mp3)
+    =========================================== -->
+    <audio id="audioFundo" src="3.mp3" preload="auto"></audio>
+
+
+    <!-- ==========================================
+         SCRIPT PARA TOCAR O ÁUDIO AUTOMATICAMENTE
+    =========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audioFundo');
+            
+            // Tenta tocar o áudio assim que a página carrega
+            audio.play().catch(error => {
+                console.log("O navegador bloqueou o autoplay. O áudio será iniciado ao primeiro clique.");
+            });
+            
+            // Caso o navegador bloqueie (comum hoje em dia), toca no primeiro clique em qualquer lugar da tela
+            document.body.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play();
+                }
+            }, { once: true });
+        });
+    </script>
+
+</body>
+</html>
